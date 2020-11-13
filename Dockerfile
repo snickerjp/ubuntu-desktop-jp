@@ -11,7 +11,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 
 # Install packages
 RUN apt-get update && \
-    # Install the required packages for desktop    
+    # Install the required packages for desktop
     apt-get install -y \
       supervisor \
       xvfb \
