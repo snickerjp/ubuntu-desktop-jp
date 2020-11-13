@@ -26,6 +26,11 @@ RUN apt-get update && \
       vim-tiny \
       xfce4-terminal \
       && \
+    # add Ubuntu Japanese Team list
+    curl -L https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg | apt-key add - && \
+    curl -L https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg | apt-key add - && \
+    curl -L https://www.ubuntulinux.jp/sources.list.d/focal.list -o /etc/apt/sources.list.d/ubuntu-ja.list && \
+    apt-get update && \
     # Install japanese language packs(optional)
     apt-get install -y \
       language-pack-ja-base language-pack-ja \
